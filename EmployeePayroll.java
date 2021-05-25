@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 
-public class createdatabase {
+public class EmployeePayroll {
 	
 	public static void main(String args[]) throws ClassNotFoundException, SQLException
 	{
@@ -23,5 +23,14 @@ public class createdatabase {
 	Connection con = DriverManager.getConnection(url,userName,password);
 	Statement st = con.createStatement();
 	ResultSet rs = st.executeQuery(query);
+	//int rs = st.executeUpdate(query);
+	//System.out.println("Number of rows affected"+rs);
+	
+	String employeeData = "";
+	while(rs.next()) {
+		employeeData = rs.getInt(1)+"-"+rs.getString(2)+"-"+rs.getString(3)+"-"+rs.getString(4)+"-"+rs.getString(5);		
+		System.out.println(employeeData);
+	} 
 }
 }
+
